@@ -1,0 +1,81 @@
+<div class="curso-card shadow-lg rounded-4 overflow-hidden">
+
+    <!-- Imagen -->
+    <div class="img-container">
+        <img [src]="data().imagen" alt="Curso" class="img-fluid">
+    </div>
+
+    <div class="p-3">
+
+        <!-- Datos del curso -->
+        <ul class="list-unstyled mb-3 mt-2 detalles">
+            <li><strong>Modalidad:</strong> {{ data().modalidad }}</li>
+            <li><strong>Duración:</strong> {{ data().duracionSemanas }} Semanas</li>
+            <li><strong>Inicia:</strong> {{ data().inicio }}</li>
+            <li><strong>Termina:</strong> {{ data().termina }}</li>
+            <li><strong>Exámenes de simulación físicos:</strong> {{ data().simulacros }}</li>
+            <li><strong>{{ data().horas }} horas</strong> de capacitación</li>
+        </ul>
+
+        <!-- Horarios -->
+        <button class="btn btn-light boton-horarios w-100 mb-3 d-flex justify-content-between align-items-center">
+      <span>Horarios:</span>
+      <i class="bi bi-info-circle"></i>
+    </button>
+
+        <!-- Descuento -->
+        <div class="descuento mb-2 text-center fw-bold">{{ data().descuento }}% de descuento</div>
+
+        <!-- Precios -->
+        <div class="text-center">
+            <div class="precio-lista">
+                Precio de lista:
+                <span class="tachado">${{ data().precioLista | number:'1.2-2' }}</span>
+            </div>
+
+            <div class="precio-oferta mt-1">
+                ${{ data().precioPromo | number:'1.2-2' }}
+            </div>
+
+            <div class="ahorro mb-2">
+                Ahorra ${{ data().ahorro | number:'1.2-2' }}
+            </div>
+
+            <!-- Liquidación destacada y llamativa -->
+            @if (data().limiteLiquidar || data().textoLiquidar) {
+                <div class="liquidacion-destacada p-2 mb-2 rounded-3 text-center">
+                    <span class="liquidacion-titulo d-block text-uppercase fw-extrabold">{{ data().textoLiquidar || '¡Liquídalo antes del:' }}</span>
+                    <span class="liquidacion-fecha fw-bold text-danger">{{ data().limiteLiquidar }}</span>
+                </div>
+            }
+
+            <!-- Meses sin intereses llamativo -->
+            @if (data().textoMeses) {
+                <div class="meses-sin-intereses-box p-2 mb-2 rounded-3 d-flex flex-column align-items-center justify-content-center">
+                    <span class="meses-texto fw-bold">{{ data().textoMeses }}</span>
+                    
+                    <!-- Logotipos de tarjetas Visa y Mastercard -->
+                    <div class="tarjetas-logos mt-1 d-flex gap-2 align-items-center justify-content-center">
+                        <!-- Visa Logo SVG -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="tarjeta-logo-svg" width="30" height="18">
+                            <path fill="#1A1F71" d="M14.044 15.607h1.936l1.206-7.387h-1.936l-1.206 7.387zm5.952-7.234c-.452-.178-1.155-.37-1.944-.37-2.138 0-3.645 1.134-3.655 2.766-.01 1.202 1.08 1.87 1.9 2.27 1.59.78 1.944 1.026 1.936 1.63-.008.932-1.116 1.36-2.148 1.36-1.432 0-2.193-.217-3.364-.727l-.462 2.87c.78.36 2.226.67 3.714.685 3.39 0 5.602-1.674 5.626-4.267.01-1.38-.823-2.433-2.63-3.298-.445-.226-.867-.442-.867-.936.002-.455.5-.936 1.573-.936.883-.016 1.528.192 2.03.411l.346-2.158c-.5-.198-1.13-.396-1.8-.396zm3.328.232l-1.8 7.387h1.868l1.8-7.387h-1.868zM9.47 8.373H6.386c-.722 0-1.267.419-1.577 1.011L1.14 15.607h1.996l.398-1.1h2.432c.058.26.23.688.23.688h1.761l-1.47-7.387c.365-.18.73-.36 1.096-.54l.088.106zm-4.717 4.298c.174-.47 1.208-3.267 1.208-3.267l.685 3.267H4.753z"/>
+                        </svg>
+                        <!-- Mastercard Logo SVG -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 15" class="tarjeta-logo-svg" width="26" height="16">
+                            <circle cx="7" cy="7.5" r="7" fill="#EB001B" />
+                            <circle cx="17" cy="7.5" r="7" fill="#F79E1B" fill-opacity="0.8" />
+                        </svg>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <!-- Botones -->
+        <button class="btn btn-primary w-100 mt-3 py-2 fw-bold rounded-3">COMPRAR</button>
+
+        <button class="btn btn-outline-secondary w-100 mt-2 py-2 fw-bold rounded-3">
+      APARTAR <br>
+      <small>Aparta con ${{ data().apartado | number:'1.2-2' }}</small>
+    </button>
+    </div>
+</div>

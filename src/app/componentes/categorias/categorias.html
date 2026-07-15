@@ -1,0 +1,15 @@
+<div class="categorias-wrapper position-relative">
+    <!-- TÍTULO -->
+    <div class="titulo text-center mb-4">
+        <h2 class="titulo-principal">{{ props.titulo }}</h2>
+    </div>
+
+    <!-- CONTENEDOR DE CUADROS -->
+    <div class="cuadros-container d-flex flex-wrap justify-content-center gap-3">
+        <div *ngFor="let c of props.cuadros; let i = index" class="cuadro-item">
+            <a [href]="c.enlace || 'javascript:void(0)'" class="cuadro-link">
+                <img [src]="c.imagen" alt="Categoría" class="cuadro-img">
+            </a>
+        </div>
+    </div>
+</div>

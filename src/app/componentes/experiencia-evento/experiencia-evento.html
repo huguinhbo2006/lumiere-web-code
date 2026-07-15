@@ -1,0 +1,21 @@
+<section class="lumi-experience">
+    <!-- HEADER -->
+    <div class="lumi-section-head">
+        <h2 class="lumi-heading">{{ props.titulo }}</h2>
+        <p class="lumi-head-copy">{{ props.subtitulo }}</p>
+    </div>
+
+    <!-- CARDS -->
+    <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4" *ngFor="let card of props.cards; let i = index">
+            <div class="lumi-card">
+                <div class="lumi-exp-icon">
+                    <img *ngIf="card.imagen" [src]="card.imagen" [alt]="card.titulo">
+                    <img *ngIf="!card.imagen" src="https://cdn-icons-png.flaticon.com/512/1828/1828919.png" alt="icono">
+                </div>
+                <h6>{{ card.titulo }}</h6>
+                <p>{{ card.descripcion }}</p>
+            </div>
+        </div>
+    </div>
+</section>

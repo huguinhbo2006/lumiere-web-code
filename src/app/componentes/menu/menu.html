@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg fixed-top py-3 shadow-sm" [class.nav-scrolled]="scrolled">
+    <div class="container">
+
+        <a class="navbar-brand d-flex align-items-center fw-bold" href="#">
+            <i class="bi bi-lightning-charge-fill me-2"></i> Cursos Lumiere
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+        <div class="collapse navbar-collapse" id="menuNav">
+
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/">Inicio</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Cursos</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" routerLink="/licenciatura">Licenciatura UdeG</a></li>
+                        <li><a class="dropdown-item" routerLink="/preparatoria">Preparatoria UdeG</a></li>
+                        <li><a class="dropdown-item" routerLink="/exani">Exani II</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Aspirantes</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" routerLink="/calculadora">Calculadora de Puntaje</a></li>
+                        <li><a class="dropdown-item" routerLink="/puntajes">Puntaes Minimos</a></li>
+                        <li><a class="dropdown-item" routerLink="/examenGratis">Examen Gratis</a></li>
+                        <li><a class="dropdown-item" routerLink="/moduloExani">Modulo EXANI II</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Planteles</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" routerLink="/planteles">Nuestros Planteles</a></li>
+                        <li><a class="dropdown-item" routerLink="/ubicaciones">Ubicaciones</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Comienza Gratis</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" routerLink="/material">Material de Estudio</a></li>
+                        <li><a class="dropdown-item" routerLink="/comunidad">Comunidad</a></li>
+                        <li><a class="dropdown-item" routerLink="/youtube">Canal de Youtube</a></li>
+                        <li><a class="dropdown-item" routerLink="/streaming">Streaming</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <a class="btn btn-primary ms-lg-3 mt-3 mt-lg-0 px-4 rounded-pill">
+                <i class="bi bi-person-circle me-2"></i> Ingresar
+            </a>
+
+        </div>
+    </div>
+</nav>

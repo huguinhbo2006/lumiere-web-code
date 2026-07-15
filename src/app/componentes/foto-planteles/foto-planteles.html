@@ -1,0 +1,19 @@
+<div class="foto-wrapper">
+
+    <div class="carousel-container">
+        <div class="tablet-frame">
+
+            <div class="screen" [class.flash]="isFlashing">
+                <img class="main-image" [src]="images[currentIndex]" *ngIf="images.length" />
+
+                <div class="thumbnail-row" *ngIf="images.length > 1">
+                    <div class="thumb" *ngFor="let img of images; let i = index" [class.active]="i === currentIndex" (click)="selectImage(i)">
+                        <img [src]="img" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

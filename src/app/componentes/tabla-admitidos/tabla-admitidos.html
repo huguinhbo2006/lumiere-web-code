@@ -1,0 +1,32 @@
+<section class="tabla-admitidos-section py-5" style="position: relative;">
+    <div class="container">
+        <!-- Título de la Sección -->
+        <h2 class="text-center fw-bold mb-4 text-slate-800">{{ props.titulo || 'Alumnos Admitidos' }}</h2>
+
+        <!-- Tabla Admitidos -->
+        <div class="table-container shadow-lg rounded-4 overflow-hidden bg-white border">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0 custom-admitidos-table">
+                    <thead>
+                        <tr>
+                            <th class="ps-4">Alumno</th>
+                            <th class="text-center">Puntaje</th>
+                            <th>Carrera</th>
+                            <th>Curso</th>
+                            <th class="text-center pe-4">Calendario</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let fila of props.filas; let i = index">
+                            <td class="ps-4 fw-bold text-slate-700 name-col">{{ fila.alumno }}</td>
+                            <td class="text-center fw-bold score-col">{{ fila.puntaje }}</td>
+                            <td class="career-col text-slate-700">{{ fila.carrera }}</td>
+                            <td class="course-col text-slate-700">{{ fila.curso }}</td>
+                            <td class="text-center pe-4 fw-bold text-slate-500 calendar-col">{{ fila.calendario }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

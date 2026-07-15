@@ -1,0 +1,35 @@
+<div class="banner-wrapper position-relative">
+
+    <!-- IMÁGENES -->
+    <div class="banner-container position-relative">
+        <img *ngFor="let img of images; let i = index" [src]="img" class="banner-img" [class.active]="i === currentIndex">
+
+        <div class="flash-overlay" [class.flash-active]="flash"></div>
+    </div>
+
+    <!-- FORMULARIO -->
+    <div class="banner-form-wrapper">
+        <div class="banner-form card p-4 shadow-lg">
+            <h3 class="fw-bold text-primary mb-3 text-center">
+                Solicitar Información
+            </h3>
+
+            <form>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" placeholder="Nombre">
+                    <label>Nombre</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" placeholder="Correo">
+                    <label>Correo electrónico</label>
+                </div>
+
+                <button class="btn btn-primary w-100 rounded-pill">
+                    Enviar
+                </button>
+            </form>
+        </div>
+    </div>
+
+</div>

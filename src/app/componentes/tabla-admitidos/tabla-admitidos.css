@@ -1,0 +1,59 @@
+.tabla-admitidos-section {
+    transition: all 0.3s ease;
+}
+
+/* Tabla Estilizada */
+.table-container {
+    border: 1px solid #e2e8f0 !important;
+}
+
+.custom-admitidos-table {
+    border-collapse: separate;
+}
+
+.custom-admitidos-table thead th {
+    background-color: #0074e4;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-bottom: none;
+}
+
+.custom-admitidos-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.custom-admitidos-table tbody tr:nth-of-type(even) {
+    background-color: #f8fafc;
+}
+
+.custom-admitidos-table tbody tr:hover {
+    background-color: #f1f5f9;
+}
+
+.custom-admitidos-table tbody td {
+    padding-top: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.92rem;
+}
+
+.name-col {
+    color: #0b5ed7;
+    font-size: 0.95rem;
+}
+
+.score-col {
+    color: #1e293b;
+    font-weight: 800;
+}
+
+.career-col, .course-col {
+    font-weight: 600;
+}
+
+.calendar-col {
+    color: #475569;
+}

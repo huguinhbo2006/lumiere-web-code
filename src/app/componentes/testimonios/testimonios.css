@@ -1,0 +1,179 @@
+/* ----------------------------- */
+
+
+/*   TÍTULO ANIMADO MULTICOLOR   */
+
+
+/* ----------------------------- */
+
+.titulo-animado {
+    font-weight: 900;
+    font-size: 2.6rem;
+    text-align: center;
+    letter-spacing: 2px;
+    background: linear-gradient( 90deg, #ff0080, #6f42c1, #007bff, #00d4ff, #00ff88, #ffdd00, #ff0080);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: tituloGradient 6s ease-in-out infinite;
+}
+
+@keyframes tituloGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* ----------------------------- */
+
+
+/*      WRAPPER DEL TESTIMONIO   */
+
+
+/* ----------------------------- */
+
+.testimonio-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* ----------------------------- */
+
+
+/*          CHISPAS INTERNAS     */
+
+
+/* ----------------------------- */
+
+.spark-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.spark-container::before,
+.spark-container::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 70%);
+    border-radius: 50%;
+    opacity: 0;
+    animation: spark 2.2s infinite ease-in-out;
+}
+
+.spark-container::before {
+    top: 20%;
+    left: 30%;
+}
+
+.spark-container::after {
+    top: 70%;
+    left: 60%;
+    animation-delay: 1.1s;
+}
+
+@keyframes spark {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    40% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    80% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* ----------------------------- */
+
+
+/*         TARJETA DE OPINIÓN    */
+
+
+/* ----------------------------- */
+
+.testimonio-card {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(4px);
+    position: relative;
+    z-index: 2;
+    border-radius: 18px;
+    transition: transform .3s ease, box-shadow .3s ease;
+    border: 2px solid #f3f3f3;
+}
+
+.testimonio-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, .15);
+}
+
+
+/* ----------------------------- */
+
+
+/*         AVATAR & TEXTO        */
+
+
+/* ----------------------------- */
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    object-fit: cover;
+    border: 3px solid #007bff;
+}
+
+.texto {
+    font-size: 1rem;
+    color: #444;
+}
+
+
+/* ----------------------------- */
+
+
+/*        ESTRELLAS RATING       */
+
+
+/* ----------------------------- */
+
+.estrellas {
+    display: flex;
+    gap: 4px;
+    margin-top: 4px;
+}
+
+.star {
+    font-size: 1.1rem;
+    color: #ddd;
+    transition: transform .2s ease, color .2s ease;
+}
+
+.star.filled {
+    color: #ffb703;
+    text-shadow: 0 0 4px rgba(255, 183, 3, 0.6);
+}
+
+.testimonio-card:hover .star.filled {
+    transform: scale(1.15);
+}

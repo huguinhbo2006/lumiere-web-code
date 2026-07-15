@@ -1,0 +1,71 @@
+<section class="galeria-carrusel-section py-4" style="position: relative;">
+    <div class="container">
+        <!-- Título -->
+        <div class="text-center mb-4">
+            <h2 class="titulo-principal">{{ props.titulo }}</h2>
+        </div>
+
+        <!-- Mensaje si no hay publicaciones -->
+        <div class="text-center py-5 text-muted border rounded-3 bg-light" *ngIf="!props.items || props.items.length === 0">
+            <i class="bi bi-instagram fs-1 d-block mb-2"></i>
+            <p>No hay publicaciones en la galería.</p>
+        </div>
+
+        <!-- 🔥 Swiper Carousel con Autoplay -->
+        <swiper-container *ngIf="props.items && props.items.length > 0" 
+            slides-per-view="4" 
+            space-between="20" 
+            navigation="true" 
+            pagination="true" 
+            loop="true" 
+            autoplay="true" 
+            autoplay-delay="3000"
+            autoplay-disable-on-interaction="false"
+            breakpoints='{
+                "0": { "slidesPerView": 1 },
+                "576": { "slidesPerView": 2 },
+                "992": { "slidesPerView": 3 },
+                "1200": { "slidesPerView": 4 }
+            }'>
+
+            <swiper-slide *ngFor="let item of props.items; let i = index">
+                <div class="instagram-card-wrapper position-relative">
+                    <!-- Tarjeta estilo Instagram -->
+                    <div class="instagram-card shadow-sm rounded-4 overflow-hidden bg-white border">
+                        
+                        <!-- Encabezado de la Tarjeta (Avatar + Nombre + Ubicación) -->
+                        <div class="card-header-insta d-flex align-items-center p-3 border-bottom">
+                            <div class="avatar-ring me-2.5">
+                                <img [src]="item.avatar || 'https://i.pravatar.cc/150?img=33'" alt="Avatar" class="avatar-img rounded-circle">
+                            </div>
+                            <div class="user-info ms-2">
+                                <h6 class="mb-0 fw-bold user-name text-truncate">{{ item.nombre }}</h6>
+                                <small class="text-muted user-location text-truncate d-block">{{ item.ubicacion }}</small>
+                            </div>
+                        </div>
+
+                        <!-- Imagen Principal -->
+                        <div class="card-image-insta position-relative">
+                            <img [src]="item.imagen || 'https://picsum.photos/400/400?random=1'" alt="Publicación" class="img-fluid w-100 object-fit-cover" style="aspect-ratio: 1/1; max-height: 280px;">
+                        </div>
+
+                        <!-- Acciones Sociales (Interactivo!) -->
+                        <div class="card-actions-insta p-3 d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center gap-3">
+                                <button class="action-btn" (click)="toggleLike(item)" [class.liked]="item.liked">
+                                    <i class="bi" [class.bi-heart-fill]="item.liked" [class.bi-heart]="!item.liked"></i>
+                                </button>
+                                <button class="action-btn"><i class="bi bi-chat"></i></button>
+                                <button class="action-btn"><i class="bi bi-send"></i></button>
+                            </div>
+                            <button class="action-btn" (click)="toggleBookmark(item)" [class.bookmarked]="item.bookmarked">
+                                <i class="bi" [class.bi-bookmark-fill]="item.bookmarked" [class.bi-bookmark]="!item.bookmarked"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </swiper-slide>
+        </swiper-container>
+    </div>
+</section>

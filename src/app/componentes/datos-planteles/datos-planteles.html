@@ -1,0 +1,66 @@
+<div class="container-fluid mt-4">
+
+    <!-- TÍTULO -->
+    <div class="titulo-seccion text-center mb-4">
+        <h1 class="titulo-principal">PLANTELES</h1>
+        <p class="subtitulo">Selecciona un plantel para ver su información</p>
+    </div>
+
+    <div class="row">
+
+        <!-- LISTA DE PLANTELES -->
+        <div class="col-12 col-md-3 mb-4">
+            <div class="list-group pastel-list shadow-sm">
+
+                <button *ngFor="let p of planteles; let i = index" class="list-group-item list-group-item-action plantel-btn" [class.active]="p === seleccionado" (click)="seleccionarPlantel(i)">
+          <span class="badge-plantel" [style.background]="p.color"></span>
+          {{ p.nombre }}
+        </button>
+
+            </div>
+        </div>
+
+        <!-- TARJETA DERECHA -->
+        <div class="col-12 col-md-9">
+
+            <div class="card card-plantel shadow-lg animar">
+
+                <div class="card-body">
+
+                    <h3 class="titulo-interno mb-3">
+                        {{ seleccionado?.nombre }}
+                    </h3>
+
+                    <div class="mapa-container mb-3">
+                        <iframe [src]="mapaUrlSanitizado" width="100%" height="300" style="border:0;" allowfullscreen loading="lazy"></iframe>
+                    </div>
+
+                    <!-- INFO CON ICONOS -->
+                    <div class="pastel-box mb-3">
+
+                        <p>
+                            <span class="icon">📞</span>
+                            <strong>Teléfono:</strong> {{ seleccionado?.telefono }}
+                        </p>
+
+                        <p>
+                            <span class="icon">📱</span>
+                            <strong>Celular:</strong> {{ seleccionado?.celular }}
+                        </p>
+
+                    </div>
+
+                    <!-- WHATSAPP -->
+                    <a class="btn btn-whatsapp" [href]="seleccionado?.whatsapp" target="_blank">
+            💬 Enviar WhatsApp
+          </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

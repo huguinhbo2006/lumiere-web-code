@@ -1,0 +1,43 @@
+<div class="modalidades-wrapper position-relative">
+  <!-- CABECERA -->
+  <div class="modalidades-head">
+    @if (props.titulo) {
+      <h2 class="modalidades-title">{{ props.titulo }}</h2>
+    }
+    @if (props.subtitulo) {
+      <h3 class="modalidades-subtitle">{{ props.subtitulo }}</h3>
+    }
+    @if (props.detalle) {
+      <p class="modalidades-detail">{{ props.detalle }}</p>
+    }
+  </div>
+
+  <!-- GRID DE MODALIDADES -->
+  <div class="row g-4 justify-content-center">
+    @for (m of props.modalidades; track $index) {
+      <div class="col-12 col-md-4">
+        <div class="modalidad-item-wrapper">
+          <!-- TARJETA CON COLOR DE FONDO CONFIGURABLE -->
+          <div class="modalidad-card" [style.backgroundColor]="m.colorFondo || '#f8fafc'">
+            @if (m.imagen) {
+              <div class="modalidad-icon-wrapper">
+                <img [src]="m.imagen" alt="Icono" class="modalidad-icon">
+              </div>
+            }
+            <h4 class="modalidad-text" [style.color]="m.colorTexto || '#1e293b'">{{ m.titulo || 'Nueva Modalidad' }}</h4>
+          </div>
+
+          <!-- BOTÓN MÁS INFORMACIÓN CON COLOR CONFIGURABLE -->
+          <a 
+            [href]="m.enlace || 'javascript:void(0)'"
+            target="_blank"
+            class="modalidad-btn text-decoration-none" 
+            [style.backgroundColor]="m.btnColor || '#fb923c'"
+            [style.color]="m.btnColorTexto || '#ffffff'">
+            {{ m.btnTexto || 'MÁS INFORMACIÓN' }}
+          </a>
+        </div>
+      </div>
+    }
+  </div>
+</div>

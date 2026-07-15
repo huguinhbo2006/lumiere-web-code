@@ -1,0 +1,121 @@
+.galeria-carrusel-section {
+    transition: all 0.3s ease;
+}
+
+.instagram-card-wrapper {
+    padding: 15px 5px;
+}
+
+/* Título */
+.titulo-principal {
+    font-weight: 800;
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    color: #1e293b;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* Tarjeta Instagram */
+.instagram-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.instagram-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Encabezado Tarjeta */
+.card-header-insta {
+    background-color: #ffffff;
+}
+
+.avatar-ring {
+    display: inline-block;
+    padding: 2px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-img {
+    width: 38px;
+    height: 38px;
+    object-fit: cover;
+    border: 2px solid white;
+}
+
+.user-info {
+    min-width: 0;
+    flex: 1;
+    text-align: left;
+}
+
+.user-name {
+    font-size: 0.88rem;
+    color: #1e293b;
+}
+
+.user-location {
+    font-size: 0.72rem;
+    color: #64748b;
+}
+
+/* Botones Sociales */
+.card-actions-insta {
+    background: #ffffff;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: 1.4rem;
+    color: #334155;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.action-btn:hover {
+    transform: scale(1.2);
+}
+
+.action-btn.liked {
+    color: #ef4444;
+    animation: heartbeat 0.3s ease-in-out;
+}
+
+.action-btn.bookmarked {
+    color: #eab308;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+
+/* Swiper overrides for custom look */
+swiper-container::part(button-next),
+swiper-container::part(button-prev) {
+    color: #475569;
+    background: rgba(255, 255, 255, 0.9);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transform: scale(0.85);
+}
+
+swiper-container::part(pagination) {
+    --swiper-pagination-color: #3b82f6;
+    margin-bottom: -5px;
+}

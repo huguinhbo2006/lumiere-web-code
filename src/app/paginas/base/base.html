@@ -1,0 +1,65 @@
+<app-menu></app-menu>
+
+<ng-container *ngFor="let el of elements">
+
+    <app-banner *ngIf="el.type === 'banner'" [images]="el.props.images">
+    </app-banner>
+
+    <app-mensaje *ngIf="el.type === 'mensaje'" [texto]="el.props.texto">
+    </app-mensaje>
+
+    <app-numeros *ngIf="el.type === 'numeros'" [props]="el.props">
+    </app-numeros>
+
+    <app-profesores *ngIf="el.type === 'profesores'" [props]="el.props">
+    </app-profesores>
+
+    <app-foto-planteles *ngIf="el.type === 'foto-planteles'" [images]="el.props.images">
+    </app-foto-planteles>
+
+    <app-whatsapp *ngIf="el.type === 'whatsapp'" [phone]="el.props.phone">
+    </app-whatsapp>
+
+    <app-testimonios *ngIf="el.type === 'testimonios'" [props]="el.props">
+    </app-testimonios>
+
+    <app-cursos *ngIf="el.type === 'cursos'" [props]="el.props">
+    </app-cursos>
+
+    <app-chat *ngIf="el.type === 'chat'" [props]="el.props">
+    </app-chat>
+
+    <app-curso *ngIf="el.type === 'curso'" [data]="el.props">
+    </app-curso>
+
+    <app-datos-planteles *ngIf="el.type === 'datos-planteles'" [props]="el.props">
+    </app-datos-planteles>
+
+    <app-faq *ngIf="el.type === 'faq'" [props]="el.props">
+    </app-faq>
+
+    <app-video-texto *ngIf="el.type === 'video-texto'" [props]="el.props">
+    </app-video-texto>
+
+    <app-categorias *ngIf="el.type === 'categorias'" [props]="el.props">
+    </app-categorias>
+
+    <app-experiencia-evento *ngIf="el.type === 'experiencia-evento'" [props]="el.props">
+    </app-experiencia-evento>
+
+    <app-galeria-carrusel *ngIf="el.type === 'galeria-carrusel'" [props]="el.props">
+    </app-galeria-carrusel>
+
+    <app-minibanner *ngIf="el.type === 'minibanner'" [props]="el.props">
+    </app-minibanner>
+
+    <app-modalidades *ngIf="el.type === 'modalidades'" [props]="el.props">
+    </app-modalidades>
+
+    <app-streaming *ngIf="el.type === 'streaming'" [props]="el.props">
+    </app-streaming>
+
+    <app-tabla-admitidos *ngIf="el.type === 'tabla-admitidos'" [props]="el.props">
+    </app-tabla-admitidos>
+
+</ng-container>

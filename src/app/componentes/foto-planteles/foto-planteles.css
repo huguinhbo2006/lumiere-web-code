@@ -1,0 +1,166 @@
+.carousel-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+
+/* ============================
+      MARCO TIPO IPAD
+============================= */
+
+.tablet-frame {
+    position: relative;
+    width: 88%;
+    max-width: 900px;
+    padding: 18px;
+    background: linear-gradient(145deg, #dcdcdc, #b9b9b9);
+    border-radius: 34px;
+    border: 3px solid #a8a8a8;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25), inset 0 0 10px rgba(255, 255, 255, 0.45), inset 0 0 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Cámara superior estilo iPad */
+
+.camera {
+    width: 12px;
+    height: 12px;
+    background: radial-gradient(circle, #333, #000);
+    border-radius: 50%;
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+}
+
+
+/* Pantalla */
+
+.screen {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    border-radius: 22px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.75);
+}
+
+
+/* Imagen principal */
+
+.main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Transición zoom */
+
+.zoom-transition {
+    animation: zoomIn 0.6s ease;
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(1.12);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* Flash */
+
+.flash {
+    animation: flashEffect 0.4s ease;
+}
+
+@keyframes flashEffect {
+    0% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(3);
+    }
+    100% {
+        filter: brightness(1);
+    }
+}
+
+
+/* ============================
+        THUMBNAILS
+============================= */
+
+.thumbnail-row {
+    position: absolute;
+    bottom: 12px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.thumb img {
+    width: 60px;
+    height: 40px;
+    border-radius: 6px;
+    object-fit: cover;
+    opacity: 0.75;
+    cursor: pointer;
+    transition: opacity 0.25s, transform 0.25s;
+    border: 2px solid rgba(0, 255, 255, 0.4);
+    background: #000;
+}
+
+
+/* Glow neón en la miniatura activa */
+
+.thumb.active img {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 1), 0 0 18px rgba(0, 255, 255, 0.8);
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+
+/* Hover */
+
+.thumb img:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+
+/* ============================
+   ANIMACIÓN CURVA MINIATURA
+============================= */
+
+.thumb.animate img {
+    animation: curveDrop 0.9s ease forwards;
+}
+
+@keyframes curveDrop {
+    0% {
+        transform: translate(-40px, -120px) rotate(-10deg) scale(1.4);
+        opacity: 0;
+    }
+    40% {
+        transform: translate(25px, 25px) rotate(4deg) scale(1.1);
+        opacity: 0.85;
+    }
+    100% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+        opacity: 1;
+    }
+}

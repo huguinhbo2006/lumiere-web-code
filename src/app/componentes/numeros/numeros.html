@@ -1,0 +1,61 @@
+<div class="numeros-cinta">
+
+    <div class="contenido">
+        <h2 class="titulo">{{ props.titulo }}</h2>
+        <p class="subtitulo">{{ props.subtitulo }}</p>
+
+        <div class="estadisticas">
+
+            <div class="estadistica" *ngFor="let stat of props.stats">
+
+                <!-- ICONO -->
+                <div class="icono" [ngSwitch]="stat.tipo">
+
+                    <!-- GRADUADOS -->
+                    <svg *ngSwitchCase="'graduados'" viewBox="0 0 64 64" class="trazo">
+            <path d="M32 6L2 20l30 14 26-12v14h4V20L32 6z"/>
+            <path d="M12 30v10c0 6 8 12 20 12s20-6 20-12V30l-20 9-20-9z"/>
+          </svg>
+
+                    <!-- ALUMNOS -->
+                    <svg *ngSwitchCase="'alumnos'" viewBox="0 0 64 64" class="usuario-grande">
+            <g class="confetti">
+              <circle cx="10" cy="10" r="2"/>
+              <circle cx="54" cy="14" r="2"/>
+              <circle cx="16" cy="40" r="2"/>
+              <circle cx="48" cy="44" r="2"/>
+              <circle cx="32" cy="6" r="2"/>
+            </g>
+            <g class="birrete">
+              <polygon points="32,6 14,14 32,22 50,14"/>
+              <line x1="50" y1="14" x2="50" y2="22"/>
+            </g>
+            <circle cx="32" cy="26" r="9"/>
+            <path class="sonrisa" d="M27 28c1.5 2 8.5 2 10 0"/>
+            <path d="M16 56c0-12 8-18 16-18s16 6 16 18"/>
+          </svg>
+
+                    <!-- AÑOS -->
+                    <svg *ngSwitchCase="'anios'" viewBox="0 0 64 64" class="calendario">
+            <rect x="8" y="12" width="48" height="44" rx="6"/>
+            <rect x="18" y="6" width="6" height="12"/>
+            <rect x="40" y="6" width="6" height="12"/>
+            <text x="32" y="42" text-anchor="middle" class="fecha">
+              {{ soloNumero(stat.valor) }}
+            </text>
+          </svg>
+
+                </div>
+
+                <!-- VALOR -->
+                <div class="numero">{{ stat.valor }}</div>
+
+                <!-- TEXTO -->
+                <div class="leyenda">{{ stat.texto }}</div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>

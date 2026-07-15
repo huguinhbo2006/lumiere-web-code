@@ -1,0 +1,33 @@
+.video-texto-section {
+    transition: all 0.3s ease;
+}
+
+.video-container {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.video-container:hover {
+    transform: scale(1.01);
+}
+
+.section-title {
+    color: #1e293b;
+    font-size: 2.2rem;
+    line-height: 1.2;
+}
+
+.section-desc {
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.btn-cta {
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.15);
+}
+
+.btn-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(13, 110, 253, 0.25);
+}

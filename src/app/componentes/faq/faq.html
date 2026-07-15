@@ -1,0 +1,27 @@
+<div class="container-fluid mt-4 px-3 px-md-5">
+
+    <div class="titulo text-center mb-4">
+        <h1 class="titulo-principal">Preguntas Frecuentes</h1>
+        <p class="subtitulo">Encuentra rápidamente respuestas a tus dudas</p>
+    </div>
+
+    <div class="faq-container">
+
+        <div class="faq-item" *ngFor="let f of faqs; let i = index" (click)="toggle(i)">
+
+            <div class="faq-pregunta">
+                <span>{{ f.pregunta }}</span>
+                <span class="icon">
+                    {{ abierto === i ? '−' : '+' }}
+                </span>
+            </div>
+
+            <div class="faq-respuesta" [class.mostrar]="abierto === i">
+                <p>{{ f.respuesta }}</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

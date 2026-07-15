@@ -1,0 +1,14 @@
+<section class="cursos-section">
+
+    <h4 class="titulo-cursos mb-4">
+        Cursos que transforman tu futuro
+    </h4>
+
+
+    <div class="row g-4">
+        <div class="col-md-4" *ngFor="let curso of props.cursos">
+            <app-curso [data]="curso"></app-curso>
+        </div>
+    </div>
+
+</section>

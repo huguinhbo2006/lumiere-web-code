@@ -1,0 +1,42 @@
+<div class="container py-5">
+
+    <h2 class="titulo-animado mb-5">
+        {{ props.titulo }}
+    </h2>
+
+    <div class="row g-4 justify-content-center">
+        <div class="col-12 col-md-6 col-lg-4" *ngFor="let t of props.testimonios; let i = index">
+
+            <div class="testimonio-wrapper">
+
+                <!-- Chispas -->
+                <div class="spark-container"></div>
+
+                <div class="testimonio-card shadow-lg p-4 h-100">
+
+                    <div class="d-flex align-items-center mb-3 gap-3">
+                        <img [src]="t.imagen || 'https://i.pravatar.cc/150?img=' + (i + 1)" class="avatar">
+
+                        <div>
+                            <h5 class="fw-bold m-0 text-primary">
+                                {{ t.nombre }}
+                            </h5>
+
+                            <!-- ⭐ Calificación -->
+                            <div class="estrellas">
+                                <span *ngFor="let star of [1,2,3,4,5]" class="star" [class.filled]="star <= t.calificacion">
+                                    ★
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="texto">
+                        {{ t.texto }}
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

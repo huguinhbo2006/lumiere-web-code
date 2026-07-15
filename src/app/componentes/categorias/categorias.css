@@ -1,0 +1,60 @@
+.categorias-wrapper {
+  padding: 30px;
+  background-color: #fafbfe;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  transition: border 0.3s;
+}
+
+/* Título */
+.titulo-principal {
+  font-weight: 800;
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  color: #111111;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Contenedor de Cuadros */
+.cuadros-container {
+  padding: 1rem 0;
+}
+
+/* Cuadro Item (Caja individual) */
+.cuadro-item {
+  border: 1px solid #c5cffd;
+  border-radius: 8px;
+  padding: 12px 24px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  transition: all 0.25s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 260px;
+  min-height: 100px;
+}
+
+.cuadro-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(197, 207, 253, 0.4), 0 4px 6px -2px rgba(197, 207, 253, 0.3);
+  border-color: #7b94ff;
+}
+
+.cuadro-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.cuadro-img {
+  max-width: 100%;
+  max-height: 75px;
+  object-fit: contain;
+  display: block;
+}

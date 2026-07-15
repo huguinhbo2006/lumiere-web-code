@@ -1,0 +1,88 @@
+/* ================================
+   Estilo juvenil / pastel escolar
+================================ */
+
+.titulo-principal {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #3a4c5a;
+}
+
+.subtitulo {
+    margin-top: -5px;
+    font-size: 1.1rem;
+    color: #6a7c8b;
+}
+
+
+/* Contenedor ahora ocupa todo el ancho */
+
+.faq-container {
+    width: 100%;
+}
+
+
+/* Tarjeta FAQ */
+
+.faq-item {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 20px 24px;
+    margin-bottom: 14px;
+    cursor: pointer;
+    border: 1px solid #e4ebf3;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+    transition: 0.25s ease;
+}
+
+.faq-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+.faq-pregunta {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #344754;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.icon {
+    font-size: 1.7rem;
+    padding: 0 10px;
+    color: #4f6d88;
+    transition: transform 0.3s ease;
+}
+
+.faq-item:hover .icon {
+    transform: scale(1.1);
+}
+
+.faq-respuesta {
+    max-height: 0;
+    overflow: hidden;
+    font-size: 1rem;
+    color: #546b7c;
+    padding: 0 5px;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.faq-respuesta.mostrar {
+    max-height: 250px;
+    padding-top: 14px;
+}
+
+
+/* Responsive */
+
+@media (max-width: 600px) {
+    .faq-item {
+        padding: 16px;
+    }
+    .faq-pregunta {
+        font-size: 1.1rem;
+    }
+}

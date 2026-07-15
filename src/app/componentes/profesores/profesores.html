@@ -1,0 +1,24 @@
+<section class="profesores-section">
+
+    <h2 class="titulo">Conoce a nuestros expertos</h2>
+
+    <div class="profesores-scroll">
+
+        <div class="profesor-card" *ngFor="let profesor of props.profesores; let i = index">
+
+            <div class="imagen-wrapper">
+                <img [src]="profesor.foto || 'https://picsum.photos/260/160?random=' + i" alt="{{ profesor.nombre }}">
+            </div>
+
+            <div class="contenido">
+                <h3>{{ profesor.nombre }}</h3>
+                <span class="especialidad">
+                    {{ profesor.especialidad }}
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

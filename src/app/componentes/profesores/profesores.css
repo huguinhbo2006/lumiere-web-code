@@ -1,0 +1,154 @@
+/* =========================
+   SECCIÓN PROFESORES
+========================= */
+
+.profesores-section {
+    padding: 40px 20px;
+    background: #f9fafb;
+    border-radius: 24px;
+}
+
+.titulo {
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 24px;
+    color: #111827;
+}
+
+
+/* =========================
+   SCROLL HORIZONTAL
+========================= */
+
+.profesores-scroll {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    padding-bottom: 12px;
+    scroll-snap-type: x mandatory;
+}
+
+.profesores-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+
+.profesores-scroll::-webkit-scrollbar-thumb {
+    background: #dbeafe;
+    border-radius: 10px;
+}
+
+
+/* =========================
+   CARD PROFESOR
+========================= */
+
+.profesor-card {
+    width: 260px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+}
+
+.profesor-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================
+   IMAGEN
+========================= */
+
+.imagen-wrapper img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* =========================
+   CONTENIDO
+========================= */
+
+.contenido {
+    padding: 18px;
+    text-align: center;
+}
+
+.contenido h3 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #111827;
+}
+
+.especialidad {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #6366f1;
+    margin-bottom: 6px;
+}
+
+
+/* TEXTO VER PERFIL */
+
+.ver-perfil {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2563eb;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.ver-perfil:hover {
+    color: #1e40af;
+    text-decoration: underline;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal-profesor {
+    border-radius: 22px;
+    padding: 12px;
+}
+
+.imagen-modal {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.descripcion {
+    font-size: 15px;
+    color: #4b5563;
+    margin-top: 12px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 480px) {
+    .titulo {
+        font-size: 22px;
+    }
+    .profesor-card {
+        width: 220px;
+    }
+    .imagen-wrapper img {
+        height: 140px;
+    }
+}
