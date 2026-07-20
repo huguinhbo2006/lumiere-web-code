@@ -22,7 +22,7 @@ export class Cursos implements OnInit {
     this.updateItemsPerPage();
   }
 
-  @HostListener('window:resize', ['$event'])
+  @HostListener('window:resize')
   onResize() {
     this.updateItemsPerPage();
   }
