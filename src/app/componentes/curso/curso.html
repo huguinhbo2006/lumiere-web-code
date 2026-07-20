@@ -11,17 +11,41 @@
         <ul class="list-unstyled mb-3 mt-2 detalles">
             <li><strong>Modalidad:</strong> {{ data().modalidad }}</li>
             <li><strong>Duración:</strong> {{ data().duracionSemanas }} Semanas</li>
-            <li><strong>Inicia:</strong> {{ data().inicio }}</li>
-            <li><strong>Termina:</strong> {{ data().termina }}</li>
+            <li><strong>Inicia:</strong> {{ formatDate(data().inicio) }}</li>
+            <li><strong>Termina:</strong> {{ formatDate(data().termina) }}</li>
             <li><strong>Exámenes de simulación físicos:</strong> {{ data().simulacros }}</li>
             <li><strong>{{ data().horas }} horas</strong> de capacitación</li>
         </ul>
 
         <!-- Horarios -->
-        <button class="btn btn-light boton-horarios w-100 mb-3 d-flex justify-content-between align-items-center">
-      <span>Horarios:</span>
-      <i class="bi bi-info-circle"></i>
-    </button>
+        <button (click)="toggleHorarios()" class="btn btn-light boton-horarios w-100 mb-2 d-flex justify-content-between align-items-center">
+            <span>
+                <i class="bi bi-calendar3 me-2 text-primary"></i>
+                Horarios:
+            </span>
+            <i class="bi" [class.bi-chevron-up]="mostrarHorarios()" [class.bi-chevron-down]="!mostrarHorarios()"></i>
+        </button>
+
+        @if (mostrarHorarios()) {
+            <div class="horarios-container mb-3 p-2 bg-light rounded border">
+                @if (data().horarios && data().horarios!.length > 0) {
+                    @for (h of data().horarios; track h) {
+                        <div class="horario-item py-1 px-2 mb-1 rounded bg-white border-start border-primary border-3 shadow-sm d-flex justify-content-between align-items-center">
+                            @if (h.includes(':')) {
+                                <span class="text-secondary fw-semibold small">{{ h.split(':')[0] }}</span>
+                                <span class="text-dark fw-bold small">{{ h.substring(h.indexOf(':') + 1).trim() }}</span>
+                            } @else {
+                                <span class="text-dark fw-semibold w-100 text-center small">{{ h }}</span>
+                            }
+                        </div>
+                    }
+                } @else {
+                    <div class="text-muted text-center py-2 small">
+                        <i class="bi bi-info-circle me-1"></i> No hay horarios programados
+                    </div>
+                }
+            </div>
+        }
 
         <!-- Descuento -->
         <div class="descuento mb-2 text-center fw-bold">{{ data().descuento }}% de descuento</div>
@@ -45,7 +69,7 @@
             @if (data().limiteLiquidar || data().textoLiquidar) {
                 <div class="liquidacion-destacada p-2 mb-2 rounded-3 text-center">
                     <span class="liquidacion-titulo d-block text-uppercase fw-extrabold">{{ data().textoLiquidar || '¡Liquídalo antes del:' }}</span>
-                    <span class="liquidacion-fecha fw-bold text-danger">{{ data().limiteLiquidar }}</span>
+                    <span class="liquidacion-fecha fw-bold text-danger">{{ formatDate(data().limiteLiquidar) }}</span>
                 </div>
             }
 
@@ -56,15 +80,10 @@
                     
                     <!-- Logotipos de tarjetas Visa y Mastercard -->
                     <div class="tarjetas-logos mt-1 d-flex gap-2 align-items-center justify-content-center">
-                        <!-- Visa Logo SVG -->
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="tarjeta-logo-svg" width="30" height="18">
-                            <path fill="#1A1F71" d="M14.044 15.607h1.936l1.206-7.387h-1.936l-1.206 7.387zm5.952-7.234c-.452-.178-1.155-.37-1.944-.37-2.138 0-3.645 1.134-3.655 2.766-.01 1.202 1.08 1.87 1.9 2.27 1.59.78 1.944 1.026 1.936 1.63-.008.932-1.116 1.36-2.148 1.36-1.432 0-2.193-.217-3.364-.727l-.462 2.87c.78.36 2.226.67 3.714.685 3.39 0 5.602-1.674 5.626-4.267.01-1.38-.823-2.433-2.63-3.298-.445-.226-.867-.442-.867-.936.002-.455.5-.936 1.573-.936.883-.016 1.528.192 2.03.411l.346-2.158c-.5-.198-1.13-.396-1.8-.396zm3.328.232l-1.8 7.387h1.868l1.8-7.387h-1.868zM9.47 8.373H6.386c-.722 0-1.267.419-1.577 1.011L1.14 15.607h1.996l.398-1.1h2.432c.058.26.23.688.23.688h1.761l-1.47-7.387c.365-.18.73-.36 1.096-.54l.088.106zm-4.717 4.298c.174-.47 1.208-3.267 1.208-3.267l.685 3.267H4.753z"/>
-                        </svg>
-                        <!-- Mastercard Logo SVG -->
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 15" class="tarjeta-logo-svg" width="26" height="16">
-                            <circle cx="7" cy="7.5" r="7" fill="#EB001B" />
-                            <circle cx="17" cy="7.5" r="7" fill="#F79E1B" fill-opacity="0.8" />
-                        </svg>
+                        <!-- Visa Logo Font Awesome -->
+                        <i class="fa-brands fa-cc-visa tarjeta-logo-fa tarjeta-visa" title="Visa"></i>
+                        <!-- Mastercard Logo Font Awesome -->
+                        <i class="fa-brands fa-cc-mastercard tarjeta-logo-fa tarjeta-mastercard" title="Mastercard"></i>
                     </div>
                 </div>
             }

@@ -11,11 +11,31 @@ import { CommonModule } from '@angular/common';
 export class Profesores {
 
   @Input() props!: {
+    mostrarRedes?: boolean;
     profesores: {
       nombre: string;
       especialidad: string;
+      descripcion: string;
       foto: string;
+      tiktok?: string;
+      instagram?: string;
+      facebook?: string;
+      youtube?: string;
     }[];
   };
+
+  // Detalle modal
+  detalleOpen = false;
+  detalleProfesor: any = null;
+
+  abrirModalDetalle(profesor: any) {
+    this.detalleProfesor = profesor;
+    this.detalleOpen = true;
+  }
+
+  cerrarModalDetalle() {
+    this.detalleOpen = false;
+    this.detalleProfesor = null;
+  }
 
 }

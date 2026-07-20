@@ -9,7 +9,7 @@
         "test": "ng test",
         "build:prod": "ng build -c production",
         "clean:compile": "del-cli \"compiler/**\" \"!compiler/.git\" \"!compiler/.gitignore\"",
-        "copy:compile": "cpy \"dist/pedidos/browser/**/*\" compiler --parents",
+        "copy:compile": "cpy \"dist/web/browser/**/*\" compiler --parents",
         "build:compile": "npm run build:prod && npm run clean:compile && npm run copy:compile"
     },
     "prettier": {
@@ -42,6 +42,8 @@
         "@angular/compiler-cli": "^20.1.0",
         "@types/jasmine": "~5.1.0",
         "@types/video.js": "^7.3.58",
+        "cpy-cli": "^7.0.0",
+        "del-cli": "^7.0.0",
         "jasmine-core": "~5.8.0",
         "karma": "~6.4.0",
         "karma-chrome-launcher": "~3.2.0",
