@@ -1,0 +1,12 @@
+@if (iframeSrc) {
+    <div class="kommo-container">
+        <iframe
+            [src]="iframeSrc"
+            [style.height.px]="props.altura || 600"
+            width="100%"
+            frameborder="0"
+            scrolling="no"
+            allowtransparency="true">
+        </iframe>
+    </div>
+}

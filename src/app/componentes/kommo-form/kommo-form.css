@@ -1,0 +1,10 @@
+.kommo-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.kommo-container iframe {
+    width: 100%;
+    display: block;
+    border: none;
+}

@@ -20,6 +20,7 @@ import { Minibanner } from "../../componentes/minibanner/minibanner";
 import { Modalidades } from "../../componentes/modalidades/modalidades";
 import { Streaming } from "../../componentes/streaming/streaming";
 import { TablaAdmitidos } from "../../componentes/tabla-admitidos/tabla-admitidos";
+import { KommoForm } from "../../componentes/kommo-form/kommo-form";
 import { Builder } from '../../servicios/builder';
 import { CommonModule } from '@angular/common';
 
@@ -47,6 +48,7 @@ import { CommonModule } from '@angular/common';
     Modalidades,
     Streaming,
     TablaAdmitidos,
+    KommoForm,
     CommonModule
   ],
   templateUrl: './base.html',
